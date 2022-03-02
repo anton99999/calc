@@ -54,10 +54,9 @@
             height: 60px;
             background: #698064;
         }
-        .numGreen p{
+        .num span{
             margin-right: 10px;
             font-family: digital-7;
-            line-height: 100px;
             font-size: 64px;
             color: #000000;
         }
@@ -150,7 +149,7 @@
         </div>
         <div class="num" >
             <div class="numGreen">
-                <p>0</p>
+                <span>0</span>
             </div>
         </div>
         <div class="btn">
@@ -188,42 +187,41 @@
         var num2
         var oper
         function func(index){
-            num = $('.numGreen p')
+            num = $('.num span')
             if(num.text() == '0'){
                 num.text('')
             }
             num.text(num.text() + index)
         }
         function clr(){
-            $('.numGreen p').text('0')
+            $('.num span').text('0')
 
         }
         function op(index){
-            num1 = $('.numGreen p').text()
+            num1 = $('.num span').text()
             oper = index
-            $('.numGreen p').text('0')
+            $('.num span').text('0')
 
         }
         function e(){
-            num2 = $('.numGreen p').text()
+            num2 = $('.num span').text()
             
             if(oper == '+'){
                 eee  = Number(num1) +  Number(num2)
-                $('.numGreen p').text(eee)
+                $('.num span').text(eee)
             }
             if(oper == '-'){
                 eee  = Number(num1) - Number(num2)
-                $('.numGreen p').text(eee)
+                $('.num span').text(eee)
             }
             if(oper == '*'){
                 eee  = Number(num1) * Number(num2)
-                $('.numGreen p').text(eee)
+                $('.num span').text(eee)
             }
             if(oper == '/'){
                 eee  = Number(num1) + Number(num2)
-                $('.numGreen p').text(eee)
+                $('.num span').text(eee)
             }
-            
         }
     </script>
 </body>
