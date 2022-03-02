@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{margin: 0;}
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #C4C3B7;
+        }
+        .name{
+            display: flex;
+            width: 310px;
+            height: 40px;
+            background: #505050;
+            border-radius: 5px;
+            margin-bottom: 20px;
+        }
+        .vse{
+            display: flex;
+            flex-direction: column;
+            margin-top: 40px;
+        }
+        .num{
+            width: 310px;
+            height: 80px;
+
+            background: #505050;
+            box-shadow: inset 0px 0px 1px 8px rgba(0, 0, 0, 0.25);
+            border-radius: 5px;
+            margin-bottom: 20px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .numGreen{
+            display: flex;
+            justify-content: flex-end;
+            width: 270px;
+            height: 60px;
+
+            background: #698064;
+        }
+        .numGreen p{
+            margin-right: 10px;
+            font-family: Digital-7;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 48px;
+            line-height: 26px;
+            display: flex;
+            align-items: center;
+            text-align: right;
+
+            color: #000000;
+        }
+        .name p{
+            font-family: GOST type B;
+            font-size: 24px;
+            color: #FFFFFF;
+            align-self: center;
+            margin-left: 10px;
+        }
+        .btn{
+            display: flex;
+
+        } 
+        .btn p{
+            align-self: center;
+
+        } 
+        .top div, .center div, .down div, .right div{
+            display: flex;
+            justify-content: center;
+            border-radius: 10px;
+            flex-basis: 70px;
+
+            font-family: Aire Exterior;
+            font-size: 36px;
+
+            color: rgba(255, 255, 255, 0.5);
+        }
+        .top{
+            width: 230px;
+            height: 70px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .center{
+            margin-top: 10px;
+            width: 230px;
+            height: 230px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .down{
+            margin-top: 10px;
+            width: 230px;
+            height: 70px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .right{
+            margin-left: 10px;
+            width: 70px;
+            height: 390px;
+            display: flex;
+            flex-direction: column;
+
+            gap: 10px;
+        }
+        .btn_e{
+            flex-grow: 3;
+        }
+        .btn_0{
+            flex-grow: 2;
+             
+        }
+        .btn_1, .btn_2, .btn_3, .btn_4, .btn_5, .btn_6, .btn_7, .btn_8, .btn_9, .btn_0, .btn_p{
+            background: linear-gradient(89deg, #2E2E2E 0%, #3E3E3E 98.3%);
+            box-shadow: 5px 5px 5px rgba(11, 11, 11, 0.24), inset -7px 0px 3px #2C2C2C, inset 7px 0px 3px #404040;
+        }
+        .btn_e, .btn_c{
+            background: linear-gradient(89.99deg, #923838 -0.86%, #BE4848 99.99%);
+            box-shadow: 5px 5px 5px rgba(34, 13, 13, 0.212), inset -7px 0px 3px #8C3535, inset 7px 0px 3px #C44B4B;
+        }
+        .btn_m, .btn_d, .btn_a, .btn_s{
+            background: linear-gradient(90deg, #265B78 0%, #3279A1 100%);
+            box-shadow: 5px 5px 5px rgba(9, 22, 29, 0.24), inset -7px 0px 3px #245673, inset 7px 0px 3px #347DA6;
+        }
+    </style>
+</head>
+<body>
+    <div class="vse">
+        <div class="name">
+            <p>КАЛЬКУЛЯТОР КА-28</p>
+        </div>
+        <div class="num" >
+            <div class="numGreen">
+                <p>1234567890</p>
+            </div>
+        </div>
+        <div class="btn">
+            <div class="left">
+                <div class="top">
+                    <div class="btn_c"> <p>C</p> </div>
+                    <div class="btn_m"> <p>*</p> </div>
+                    <div class="btn_d"> <p>/</p> </div>
+                </div> <p></p> 
+                <div class="center"> 
+                    <div class="btn_1"> <p>1</p> </div>
+                    <div class="btn_2"> <p>2</p> </div>
+                    <div class="btn_3"> <p>3</p> </div>
+                    <div class="btn_4"> <p>4</p> </div>
+                    <div class="btn_5"> <p>5</p> </div>
+                    <div class="btn_6"> <p>6</p> </div>
+                    <div class="btn_7"> <p>7</p> </div>
+                    <div class="btn_8"> <p>8</p> </div>
+                    <div class="btn_9"> <p>9</p> </div>
+                </div>
+                <div class="down">
+                    <div class="btn_p"> <p>.</p> </div>
+                    <div class="btn_0"> <p>0</p> </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="btn_a"> <p>+</p> </div>
+                <div class="btn_s"> <p>-</p> </div>
+                <div class="btn_e"> <p>=</p> </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
