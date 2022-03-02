@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <title>Document</title>
     <style>
         *{margin: 0;}
@@ -151,38 +152,81 @@
         </div>
         <div class="num" >
             <div class="numGreen">
-                <p>1234567890</p>
+                <p>0</p>
             </div>
         </div>
         <div class="btn">
             <div class="left">
                 <div class="top">
-                    <div class="btn_c"> <p>C</p> </div>
-                    <div class="btn_m"> <p>*</p> </div>
-                    <div class="btn_d"> <p>/</p> </div>
+                    <div class="btn_c" onclick="clr()"> <p>C</p> </div>
+                    <div class="btn_m" onclick="op('*')"> <p>*</p> </div>
+                    <div class="btn_d" onclick="op('/')"> <p>/</p> </div>
                 </div> <p></p> 
                 <div class="center"> 
-                    <div class="btn_1"> <p>1</p> </div>
-                    <div class="btn_2"> <p>2</p> </div>
-                    <div class="btn_3"> <p>3</p> </div>
-                    <div class="btn_4"> <p>4</p> </div>
-                    <div class="btn_5"> <p>5</p> </div>
-                    <div class="btn_6"> <p>6</p> </div>
-                    <div class="btn_7"> <p>7</p> </div>
-                    <div class="btn_8"> <p>8</p> </div>
-                    <div class="btn_9"> <p>9</p> </div>
+                    <div class="btn_1" onclick="func(1)"> <p>1</p> </div>
+                    <div class="btn_2" onclick="func(2)"> <p>2</p> </div>
+                    <div class="btn_3" onclick="func(3)"> <p>3</p> </div>
+                    <div class="btn_4" onclick="func(4)"> <p>4</p> </div>
+                    <div class="btn_5" onclick="func(5)"> <p>5</p> </div>
+                    <div class="btn_6" onclick="func(6)"> <p>6</p> </div>
+                    <div class="btn_7" onclick="func(7)"> <p>7</p> </div>
+                    <div class="btn_8" onclick="func(8)"> <p>8</p> </div>
+                    <div class="btn_9" onclick="func(9)"> <p>9</p> </div>
                 </div>
                 <div class="down">
-                    <div class="btn_p"> <p>.</p> </div>
-                    <div class="btn_0"> <p>0</p> </div>
+                    <div class="btn_p" onclick="func('.')"> <p>.</p> </div>
+                    <div class="btn_0" onclick="func(0)"> <p>0</p> </div>
                 </div>
             </div>
             <div class="right">
-                <div class="btn_a"> <p>+</p> </div>
-                <div class="btn_s"> <p>-</p> </div>
-                <div class="btn_e"> <p>=</p> </div>
+                <div class="btn_a" onclick="op('+')"> <p>+</p> </div>
+                <div class="btn_s" onclick="op('-')"> <p>-</p> </div>
+                <div class="btn_e" onclick="e('/')"> <p>=</p> </div>
             </div>
         </div>
     </div>
+    <script>
+        var num1
+        var num2
+        var oper
+        function func(index){
+            num = $('.numGreen p')
+            if(num.text() == '0'){
+                num.text('')
+            }
+            num.text(num.text() + index)
+        }
+        function clr(){
+            $('.numGreen p').text('0')
+
+        }
+        function op(index){
+            num1 = $('.numGreen p').text()
+            oper = index
+            $('.numGreen p').text('0')
+
+        }
+        function e(){
+            num2 = $('.numGreen p').text()
+            
+            if(oper == '+'){
+                eee  = Number(num1) +  Number(num2)
+                $('.numGreen p').text(eee)
+            }
+            if(oper == '-'){
+                eee  = Number(num1) - Number(num2)
+                $('.numGreen p').text(eee)
+            }
+            if(oper == '*'){
+                eee  = Number(num1) * Number(num2)
+                $('.numGreen p').text(eee)
+            }
+            if(oper == '/'){
+                eee  = Number(num1) + Number(num2)
+                $('.numGreen p').text(eee)
+            }
+            
+        }
+    </script>
 </body>
 </html>
