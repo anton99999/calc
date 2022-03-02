@@ -9,10 +9,6 @@
     <style>
         *{margin: 0;}
         @font-face{
-            font-family: GOST type b;
-            src: url(gost.ttf);
-        }
-        @font-face{
             font-family: Aire Exterior;
             src: url(AireExterior.ttf);
         }
@@ -29,22 +25,32 @@
         }
         .name{
             display: flex;
+            align-items: center;
             width: 310px;
             height: 40px;
             background: #505050;
             border-radius: 5px;
             margin-bottom: 20px;
         }
+        .name p{
+            margin-left: 10px;
+            font-family: Montserrat;
+            font-size: 18px;
+            opacity: 0.65;
+            color: white;
+        }
         .num{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
             width: 310px;
             height: 80px;
             background: #505050;
             box-shadow: inset 0px 0px 1px 8px rgba(0, 0, 0, 0.25);
             border-radius: 5px;
             margin-bottom: 20px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
+
         }
         .numGreen{
             display: flex;
@@ -60,17 +66,6 @@
             font-family: digital-7;
             font-size: 64px;
             color: #000000;
-        }
-        .name p{
-            margin-left: 10px;
-            align-self: center;
-            font-family: Montserrat;
-            font-style: normal;
-            font-weight: 900;
-            font-size: 18px;
-            line-height: 22px;
-            opacity: 0.65;
-            color: white;
         }
         .btn{
             display: flex;
@@ -161,16 +156,18 @@
                     <div class="btn_m" onclick="op('*')">   <p>*</p> </div>
                     <div class="btn_d" onclick="op('/')">   <p>/</p> </div>
                 </div>
-                <div class="center"> 
-                    <div class="btn_1" onclick="func(1)">   <p>1</p> </div>
-                    <div class="btn_2" onclick="func(2)">   <p>2</p> </div>
-                    <div class="btn_3" onclick="func(3)">   <p>3</p> </div>
-                    <div class="btn_4" onclick="func(4)">   <p>4</p> </div>
-                    <div class="btn_5" onclick="func(5)">   <p>5</p> </div>
-                    <div class="btn_6" onclick="func(6)">   <p>6</p> </div>
+                <div class="center">
                     <div class="btn_7" onclick="func(7)">   <p>7</p> </div>
                     <div class="btn_8" onclick="func(8)">   <p>8</p> </div>
                     <div class="btn_9" onclick="func(9)">   <p>9</p> </div>
+                    
+                    <div class="btn_4" onclick="func(4)">   <p>4</p> </div>
+                    <div class="btn_5" onclick="func(5)">   <p>5</p> </div>
+                    <div class="btn_6" onclick="func(6)">   <p>6</p> </div>
+ 
+                    <div class="btn_1" onclick="func(1)">   <p>1</p> </div>
+                    <div class="btn_2" onclick="func(2)">   <p>2</p> </div>
+                    <div class="btn_3" onclick="func(3)">   <p>3</p> </div>
                 </div>
                 <div class="down">
                     <div class="btn_p" onclick="func('.')"> <p>.</p> </div>
@@ -221,7 +218,7 @@
                 $('.num p').text(eee)
             }
             if(oper == '/'){
-                eee  = Number(num1) + Number(num2)
+                eee  = Number(num1) / Number(num2)
                 $('.num p').text(eee)
             }
         }
