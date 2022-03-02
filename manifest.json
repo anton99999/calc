@@ -3,7 +3,7 @@
     "background_color": "#ffffff",
     "display": "standalone",
     "scope": "",
-    "start_url": "index.html",
+    "start_url": "https://anton99999.github.io/calc/index.html",
     "name": "CALCULATOR",
     "short_name": "CALCULATOR",
     "icons": [
