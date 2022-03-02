@@ -145,83 +145,80 @@
 </head>
 <body>
     <div class="vse">
-        <div class="name">
-            <p>КАЛЬКУЛЯТОР КА-28</p>
-        </div>
-        <div class="num" >
-            <div class="numGreen">
-                <span>0</span>
-            </div>
-        </div>
+        
+        <div class="name"><p>КАЛЬКУЛЯТОР КА-28</p></div>
+
+        <div class="num"><div class="numGreen"><p>0</p></div></div>
+
         <div class="btn">
             <div class="left">
                 <div class="top">
-                    <div class="btn_c" onclick="clr()"> <p>C</p> </div>
-                    <div class="btn_m" onclick="op('*')"> <p>*</p> </div>
-                    <div class="btn_d" onclick="op('/')"> <p>/</p> </div>
-                </div> <p></p> 
+                    <div class="btn_c" onclick="clr()"  >   <p>C</p> </div>
+                    <div class="btn_m" onclick="op('*')">   <p>*</p> </div>
+                    <div class="btn_d" onclick="op('/')">   <p>/</p> </div>
+                </div>
                 <div class="center"> 
-                    <div class="btn_1" onclick="func(1)"> <p>1</p> </div>
-                    <div class="btn_2" onclick="func(2)"> <p>2</p> </div>
-                    <div class="btn_3" onclick="func(3)"> <p>3</p> </div>
-                    <div class="btn_4" onclick="func(4)"> <p>4</p> </div>
-                    <div class="btn_5" onclick="func(5)"> <p>5</p> </div>
-                    <div class="btn_6" onclick="func(6)"> <p>6</p> </div>
-                    <div class="btn_7" onclick="func(7)"> <p>7</p> </div>
-                    <div class="btn_8" onclick="func(8)"> <p>8</p> </div>
-                    <div class="btn_9" onclick="func(9)"> <p>9</p> </div>
+                    <div class="btn_1" onclick="func(1)">   <p>1</p> </div>
+                    <div class="btn_2" onclick="func(2)">   <p>2</p> </div>
+                    <div class="btn_3" onclick="func(3)">   <p>3</p> </div>
+                    <div class="btn_4" onclick="func(4)">   <p>4</p> </div>
+                    <div class="btn_5" onclick="func(5)">   <p>5</p> </div>
+                    <div class="btn_6" onclick="func(6)">   <p>6</p> </div>
+                    <div class="btn_7" onclick="func(7)">   <p>7</p> </div>
+                    <div class="btn_8" onclick="func(8)">   <p>8</p> </div>
+                    <div class="btn_9" onclick="func(9)">   <p>9</p> </div>
                 </div>
                 <div class="down">
                     <div class="btn_p" onclick="func('.')"> <p>.</p> </div>
-                    <div class="btn_0" onclick="func(0)"> <p>0</p> </div>
+                    <div class="btn_0" onclick="func(0)"  > <p>0</p> </div>
                 </div>
             </div>
             <div class="right">
-                <div class="btn_a" onclick="op('+')"> <p>+</p> </div>
-                <div class="btn_s" onclick="op('-')"> <p>-</p> </div>
-                <div class="btn_e" onclick="e('/')"> <p>=</p> </div>
+                <div class="btn_a" onclick="op('+')">       <p>+</p> </div>
+                <div class="btn_s" onclick="op('-')">       <p>-</p> </div>
+                <div class="btn_e" onclick="e()"    >       <p>=</p> </div>
             </div>
         </div>
+
     </div>
     <script>
         var num1
         var num2
         var oper
+
         function func(index){
-            num = $('.num span')
+            num = $('.num p')
             if(num.text() == '0'){
                 num.text('')
             }
             num.text(num.text() + index)
         }
         function clr(){
-            $('.num span').text('0')
-
+            $('.num p').text('0')
         }
         function op(index){
-            num1 = $('.num span').text()
+            num1 = $('.num p').text()
             oper = index
-            $('.num span').text('0')
-
+            $('.num p').text('0')
         }
         function e(){
-            num2 = $('.num span').text()
+            num2 = $('.num p').text()
             
             if(oper == '+'){
                 eee  = Number(num1) +  Number(num2)
-                $('.num span').text(eee)
+                $('.num p').text(eee)
             }
             if(oper == '-'){
                 eee  = Number(num1) - Number(num2)
-                $('.num span').text(eee)
+                $('.num p').text(eee)
             }
             if(oper == '*'){
                 eee  = Number(num1) * Number(num2)
-                $('.num span').text(eee)
+                $('.num p').text(eee)
             }
             if(oper == '/'){
                 eee  = Number(num1) + Number(num2)
-                $('.num span').text(eee)
+                $('.num p').text(eee)
             }
         }
     </script>
