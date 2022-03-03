@@ -69,6 +69,7 @@
         }
         .num p{
             margin-right: 10px;
+            margin-top: 10px;
             font-family: Technology;
             font-size: 64px;
             color: #000000;
@@ -262,7 +263,7 @@
 
             num.text(num.text() + index);
             window.navigator.vibrate(vib);
-            sound.pause()
+            sound.currentTime = 0
             sound.play();
 
             if($('.numGreen p').width() >= 250){
@@ -275,6 +276,7 @@
         function clr(){
             $('.num p').text('0');
             window.navigator.vibrate(vib);
+            sound.currentTime = 0
             sound.play();
             size = 64
             $('.num p').css('font-size', size)
@@ -288,6 +290,7 @@
             $('.num p').css('font-size', size)
             $('.num p').text('0');
             window.navigator.vibrate(vib);
+            sound.currentTime = 0
             sound.play();
         }
 
@@ -313,6 +316,7 @@
             }
 
             window.navigator.vibrate(vib);
+            sound.currentTime = 0
             sound.play();
 
             if($('.numGreen p').width() >= 250){
