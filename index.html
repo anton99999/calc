@@ -145,6 +145,49 @@
         .btn_e p{
             margin-bottom: 160px;
         }
+        .setting{
+            display: flex;
+        }
+        .vibro, .zvuk{
+            display: flex;
+            align-items: center;
+            margin-top: 20px;
+            margin-right: 10px;
+            width: 110px;
+            height: 30px;
+
+            background: #D6D6D6;
+            border: 1px solid #666666;
+            box-sizing: border-box;
+            box-shadow: 5px 5px 10px rgba(43, 43, 43, 0.247), inset -2px -2px 3px #C5C5C5, inset 2px 2px 3px #E3E3E3;
+            border-radius: 30px;
+        }
+        .on{
+            margin-left: 10px;
+            width: 10px;
+            height: 10px;
+            background: #24FF00;
+            box-shadow: 0px 0px 5px #4AF22F;
+            border-radius: 50px;
+        }
+        .vibro p, .zvuk p{
+            margin-left: 10px;
+
+            font-family: Montserrat;
+            font-weight: 900;
+            font-size: 18px;
+            text-transform: uppercase;
+
+            color: #7a7a7a;
+
+        }
+        .off{
+            margin-left: 10px;
+            width: 10px;
+            height: 10px;
+            background: #128600;
+            border-radius: 50px;
+        }
     </style>
 </head>
 <body>
@@ -184,6 +227,18 @@
                 <div class="btn_s" onclick="op('-')">       <p>-</p> </div>
                 <div class="btn_e" onclick="e()"    >       <p>=</p> </div>
             </div>
+
+        </div>
+
+        <div class="setting">
+            <div class="vibro">
+                <div></div>
+                <p>вібро</p>
+            </div>
+            <div class="zvuk">
+                <div></div>
+                <p>звук</p>
+            </div>
         </div>
 
     </div>
@@ -192,9 +247,13 @@
         var num2;
         var oper;
         var vib   = 50;
-        var size  = 64
+        var size  = 64;
         var sound = new Audio;
         sound.src = "click.mp3";
+        
+
+
+
 
 
 
@@ -203,10 +262,10 @@
             if(num.text() == '0'){
                 num.text('')
             }
+
             num.text(num.text() + index);
-
             window.navigator.vibrate(vib);
-
+            sound.pause()
             sound.play();
 
             if($('.numGreen p').width() >= 250){
@@ -218,10 +277,9 @@
 
         function clr(){
             $('.num p').text('0');
-
             window.navigator.vibrate(vib);
-
             sound.play();
+            $('.num p').css('font-size', 64)
         }
 
 
@@ -229,9 +287,7 @@
             num1 = $('.num p').text();
             oper = index;
             $('.num p').text('0');
-
             window.navigator.vibrate(vib);
-
             sound.play();
         }
 
@@ -257,7 +313,6 @@
             }
 
             window.navigator.vibrate(vib);
-            
             sound.play();
 
             if($('.numGreen p').width() >= 250){
@@ -265,6 +320,62 @@
                 $('.numGreen p').css('font-size', size)
             }
         }
-    </script>
+
+
+
+        if(localStorage.getItem('vib') == null && 
+           localStorage.getItem('vol') == null)
+        {
+            localStorage.setItem('vib', 50)
+            localStorage.setItem('vol', 1)
+        }
+
+        vib = localStorage.getItem('vib')
+        vol = localStorage.getItem('vol')
+
+        if(vib == 50){$('.vibro div').addClass('on'); }
+        else{$('.vibro div').addClass('off'); }
+
+        if(vol == 1){$('.zvuk div').addClass('on'); sound.volume = 1}
+        else{$('.zvuk div').addClass('off'); sound.volume = 0}
+        
+
+        $('.vibro').click(function(){
+            if(vib == 0){
+                $('.vibro div').removeClass('off')
+                $('.vibro div').addClass('on')
+                vib = 50
+                localStorage.setItem('vib', vib)
+            }
+            else{
+                $('.vibro div').removeClass('on')
+                $('.vibro div').addClass('off')
+                vib = 0
+                localStorage.setItem('vib', vib)
+            }
+        })
+
+        $('.zvuk').click(function(){
+            if(vol == 0){
+                $('.zvuk div').removeClass('off')
+                $('.zvuk div').addClass('on')
+                sound.volume = 1
+                vol = 1
+                localStorage.setItem('vol', vol)
+            }
+            else{
+                $('.zvuk div').removeClass('on')
+                $('.zvuk div').addClass('off')
+                sound.volume = 0
+                vol = 0
+                localStorage.setItem('vol', vol)
+        }
+})
+
+
+
+
+
+</script>
 </body>
 </html>
