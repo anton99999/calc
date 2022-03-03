@@ -191,7 +191,8 @@
         var num1;
         var num2;
         var oper;
-        var vib = 50;
+        var vib   = 50;
+        var size  = 64
         var sound = new Audio;
         sound.src = "click.mp3";
 
@@ -207,6 +208,11 @@
             window.navigator.vibrate(vib);
 
             sound.play();
+
+            if($('.numGreen p').width() >= 250){
+                size-=5
+                $('.numGreen p').css('font-size', size)
+            }
         }
 
 
@@ -253,6 +259,11 @@
             window.navigator.vibrate(vib);
             
             sound.play();
+
+            if($('.numGreen p').width() >= 250){
+                size-=5
+                $('.numGreen p').css('font-size', size)
+            }
         }
     </script>
 </body>
