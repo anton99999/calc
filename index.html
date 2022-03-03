@@ -202,11 +202,13 @@
         }
         function clr(){
             $('.num p').text('0')
+            window.navigator.vibrate(100)
         }
         function op(index){
             num1 = $('.num p').text()
             oper = index
             $('.num p').text('0')
+            window.navigator.vibrate(100)
         }
         function e(){
             num2 = $('.num p').text()
@@ -227,6 +229,7 @@
                 eee  = Number(num1) / Number(num2)
                 $('.num p').text(eee)
             }
+            window.navigator.vibrate(100)
         }
     </script>
 </body>
