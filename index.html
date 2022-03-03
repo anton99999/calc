@@ -11,7 +11,7 @@
     <script src="sw-reg.js"></script>
     <title>CALCULATOR</title>
     <style>
-        *{margin: 0;}
+        *{margin: 0; user-select: none;}
         @font-face{
             font-family: Aire Exterior;
             src: url(font/AireExterior.ttf);
@@ -186,14 +186,16 @@
             </div>
         </div>
 
-        <audio src=""></audio>
-
     </div>
     <script>
         var num1
         var num2
         var oper
         var vib = 50
+        var sound = new Audio;
+        sound.src = "click.mp3";
+
+
 
         function func(index){
             num = $('.num p')
@@ -202,16 +204,24 @@
             }
             num.text(num.text() + index)
             window.navigator.vibrate(vib)
+
+            sound.play()
         }
         function clr(){
             $('.num p').text('0')
+
             window.navigator.vibrate(vib)
+
+            sound.play()
         }
         function op(index){
             num1 = $('.num p').text()
             oper = index
             $('.num p').text('0')
+
             window.navigator.vibrate(vib)
+
+            sound.play()
         }
         function e(){
             num2 = $('.num p').text()
@@ -232,7 +242,10 @@
                 eee  = Number(num1) / Number(num2)
                 $('.num p').text(eee)
             }
+
             window.navigator.vibrate(vib)
+            
+            sound.play()
         }
     </script>
 </body>
