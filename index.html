@@ -276,13 +276,16 @@
             $('.num p').text('0');
             window.navigator.vibrate(vib);
             sound.play();
-            $('.num p').css('font-size', 64)
+            size = 64
+            $('.num p').css('font-size', size)
         }
 
 
         function op(index){
             num1 = $('.num p').text();
             oper = index;
+            size = 64
+            $('.num p').css('font-size', size)
             $('.num p').text('0');
             window.navigator.vibrate(vib);
             sound.play();
